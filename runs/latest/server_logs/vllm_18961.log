@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/work1/krishnamurthy/arvind/gepa_qwen3/miniforge3/envs/hotpotqa/lib/python3.11/importlib/metadata/__init__.py", line 563, in from_name
+    return next(cls.discover(name=name))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/work1/krishnamurthy/arvind/venv/hotpotqa2/bin/vllm", line 33, in <module>
+    sys.exit(load_entry_point('vllm', 'console_scripts', 'vllm')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work1/krishnamurthy/arvind/venv/hotpotqa2/bin/vllm", line 22, in importlib_load_entry_point
+    for entry_point in distribution(dist_name).entry_points
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work1/krishnamurthy/arvind/gepa_qwen3/miniforge3/envs/hotpotqa/lib/python3.11/importlib/metadata/__init__.py", line 982, in distribution
+    return Distribution.from_name(distribution_name)
+srun: error: k002-005: task 0: Exited with exit code 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work1/krishnamurthy/arvind/gepa_qwen3/miniforge3/envs/hotpotqa/lib/python3.11/importlib/metadata/__init__.py", line 565, in from_name
+    raise PackageNotFoundError(name)
+importlib.metadata.PackageNotFoundError: No package metadata was found for vllm
