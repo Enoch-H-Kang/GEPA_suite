@@ -1,0 +1,50 @@
+
+Currently Loaded Modules:
+  1) autotools      3) prun/2.3     5) gnu12/12.2.0   7) openmpi4/4.1.8
+  2) cmake/3.25.2   4) rocm/7.1.0   6) ucx/1.18.1     8) hpcfund
+
+ 
+
+OUT_ROOT=/work1/krishnamurthy/arvind/adBO/runs/20251228_054915
+==== rocm-smi (sanity) ====
+
+
+========================================= ROCm System Management Interface =========================================
+=================================================== Concise Info ===================================================
+Device  Node  IDs              Temp    Power  Partitions          SCLK    MCLK     Fan  Perf  PwrCap  VRAM%  GPU%  
+[3m              (DID,     GUID)  (Edge)  (Avg)  (Mem, Compute, ID)                                                   [0m
+====================================================================================================================
+0       5     0x740f,   36740  42.0°C  45.0W  N/A, N/A, 0         800Mhz  1600Mhz  0%   auto  300.0W  0%     0%    
+1       4     0x740f,   22429  43.0°C  43.0W  N/A, N/A, 0         800Mhz  1600Mhz  0%   auto  300.0W  0%     0%    
+2       3     0x740f,   32693  44.0°C  41.0W  N/A, N/A, 0         800Mhz  1600Mhz  0%   auto  300.0W  0%     0%    
+3       2     0x740f,   42924  43.0°C  40.0W  N/A, N/A, 0         800Mhz  1600Mhz  0%   auto  300.0W  0%     0%    
+====================================================================================================================
+=============================================== End of ROCm SMI Log ================================================
+===========================
+Waiting for vLLM servers...
+
+----------------------------------------------------------------------
+Omnistat Report Card for Job Id: 258082
+----------------------------------------------------------------------
+
+Job Overview (Num Nodes = 1, Machine = HPC Fund)
+ --> Start time = 2025-12-28 05:49:54
+ --> End   time = 2025-12-28 06:16:24
+ --> Duration   = 1590 secs
+
+GPU Statistics:
+
+           | Utilization (%)  |  Memory Use (%)  | Temperature (C)  |    Power (W)     | Energy (kWh) |
+     GPU # |    Max     Mean  |    Max     Mean  |    Max     Mean  |    Max     Mean  |    Total     |
+    ---------------------------------------------------------------------------------------------------
+         0 |    0.00    0.00  |    0.02    0.02  |   44.00   42.83  |   43.00   41.15  |   1.82e-02   |
+         1 |    0.00    0.00  |    0.02    0.02  |   45.00   44.43  |   41.00   41.00  |   1.81e-02   |
+         2 |    0.00    0.00  |    0.02    0.02  |   44.00   43.48  |   43.00   43.00  |   1.90e-02   |
+         3 |    0.00    0.00  |    0.02    0.02  |   43.00   42.56  |   45.00   45.00  |   1.99e-02   |
+
+Approximate Total GPU Energy Consumed = 7.51e-02 kWh
+
+--
+Query interval = 30.000 secs
+Query execution time = 0.2 secs
+Version = 1.8.0
