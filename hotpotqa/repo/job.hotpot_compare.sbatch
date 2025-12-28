@@ -3,7 +3,7 @@
 #SBATCH -o %x.%j.out
 #SBATCH -e %x.%j.err
 #SBATCH -p mi2104x
-#SBATCH -t 4-00:00:00
+#SBATCH -t 24:00:00
 #SBATCH -N 1
 #SBATCH -n 4
 #SBATCH -c 12
@@ -69,7 +69,6 @@ cd $WORK/gepa_hotpotqa/repo
 
 python run_gepa_hotpotqa_compare.py \
   --out_root "$OUT_ROOT/logs" \
-  --run_dir "$OUT_ROOT/logs/run" \
   --refresh_sec 20 \
   --stage_step 500 \
   --api_bases "http://127.0.0.1:8000/v1,http://127.0.0.1:8001/v1,http://127.0.0.1:8002/v1" \

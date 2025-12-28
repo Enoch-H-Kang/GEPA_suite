@@ -5,8 +5,7 @@ export VLLM_API_KEY="EMPTY"
 export VLLM_MODEL="Qwen/Qwen3-8B"
 
 python run_gepa_hotpotqa_compare.py \
-  --out_root "logs" \
-  --run_dir "logs/run1" \
+  --out_root "logs/run1" \
   --refresh_sec 20 \
   --stage_step 500 \
   --seed 0 \
