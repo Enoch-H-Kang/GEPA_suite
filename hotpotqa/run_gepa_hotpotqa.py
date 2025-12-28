@@ -11,8 +11,8 @@ export VLLM_API_KEY="EMPTY"
 export VLLM_MODEL="Qwen/Qwen3-8B"
 
 python run_gepa_hotpotqa.py \
-  --work_dir "/tmp/gepa_hotpot" \
-  --log_dir  "/tmp/gepa_hotpot/logs" \
+  --work_dir "/$WORK/gepa_Qwen/hotpotqa/data" \
+  --log_dir  "/$WORK/gepa_Qwen/hotpotqa/logs" \
   --num_threads 32 \
   --retriever_threads 8 \
   --max_metric_calls 10000
@@ -78,6 +78,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--k_per_hop", type=int, default=5)
+
+    # add to argparse
+    ap.add_argument("--run_dir", type=str, required=True,
+                    help="Output dir for this single run (curve.csv, summary.json, GEPA logs)")
+    ap.add_argument("--use_merge", type=int, default=0, choices=[0,1])
+    ap.add_argument("--bon", type=int, default=1)
+    ap.add_argument("--itr", type=int, default=1)
+
+    # optional: staged execution for live-updating plot
+    ap.add_argument("--stage_step", type=int, default=0,
+                    help="If >0, run GEPA in stages of this many metric calls and write curve.csv after each stage.")
 
     # Rollout budget in DSPy GEPA = max_metric_calls (metric evaluations). :contentReference[oaicite:21]{index=21}
     ap.add_argument("--max_metric_calls", type=int, default=5000)
