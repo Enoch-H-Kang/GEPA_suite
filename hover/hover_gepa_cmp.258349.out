@@ -7,27 +7,27 @@ Currently Loaded Modules:
 
 
 ----------------------------------------------------------------------
-Omnistat Report Card for Job Id: 258189
+Omnistat Report Card for Job Id: 258349
 ----------------------------------------------------------------------
 
 Job Overview (Num Nodes = 1, Machine = HPC Fund)
- --> Start time = 2025-12-29 01:32:44
- --> End   time = 2025-12-29 13:24:14
- --> Duration   = 42690 secs
+ --> Start time = 2025-12-29 14:05:08
+ --> End   time = 2025-12-29 16:24:08
+ --> Duration   = 8340 secs
 
 GPU Statistics:
 
            | Utilization (%)  |  Memory Use (%)  | Temperature (C)  |    Power (W)     | Energy (kWh) |
      GPU # |    Max     Mean  |    Max     Mean  |    Max     Mean  |    Max     Mean  |    Total     |
     ---------------------------------------------------------------------------------------------------
-         0 |  100.00   94.30  |   90.31   90.14  |   54.00   52.11  |  221.00  197.30  |   2.34e+00   |
-         1 |  100.00   17.61  |   90.31   90.14  |   63.00   60.40  |  236.00  200.67  |   2.38e+00   |
-         2 |  100.00   94.60  |   90.31   90.06  |   53.00   48.96  |  249.00  170.36  |   2.02e+00   |
-         3 |    0.00    0.00  |    0.02    0.02  |   33.00   31.89  |   41.00   40.02  |   4.75e-01   |
+         0 |  100.00   33.06  |   91.03   89.81  |   61.00   59.15  |  212.00  182.54  |   4.23e-01   |
+         1 |  100.00   92.94  |   91.03   89.81  |   59.00   56.02  |  219.00  187.27  |   4.34e-01   |
+         2 |  100.00   93.63  |   91.03   89.49  |   64.00   59.02  |  222.00  175.03  |   4.06e-01   |
+         3 |    0.00    0.00  |    0.02    0.02  |   41.00   37.14  |   45.00   44.02  |   1.02e-01   |
 
-Approximate Total GPU Energy Consumed = 7.22e+00 kWh
+Approximate Total GPU Energy Consumed = 1.37e+00 kWh
 
 --
 Query interval = 30.000 secs
-Query execution time = 1.6 secs
+Query execution time = 0.4 secs
 Version = 1.8.0

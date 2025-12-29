@@ -62,11 +62,10 @@ def configure_dspy_lm_from_vllm():
         temperature=0.6,
         top_p=0.95,
         # top_k=20,   # uncomment only if your client/server accepts it
-        # Don't artificially clamp; allow long outputs if needed.
-        # (Still bounded by the model's context window.)
-        max_tokens=4096,
+        # No max_tokens limit - let vLLM dynamically allocate based on available context window
         cache=False,
-        num_retries=3,
+        num_retries=10,  # Increased retries for connection stability
+        timeout=300,  # 5 minute timeout for long generations
     )
 
     lm = dspy.LM(f"openai/{model}", **lm_kwargs)

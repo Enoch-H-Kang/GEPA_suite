@@ -74,17 +74,17 @@ echo "$API0,$API1,$API2" > "$OUT_ROOT/api_bases.txt"
 # ----------------------------
 export HIP_VISIBLE_DEVICES=0
 srun -n 1 --exact \
-  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT0} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 --disable-v1" \
+  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT0} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 -O 0" \
   >> "$OUT_ROOT/vllm_${PORT0}.log" 2>&1 &
 
 export HIP_VISIBLE_DEVICES=1
 srun -n 1 --exact \
-  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT1} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 --disable-v1" \
+  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT1} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 -O 0" \
   >> "$OUT_ROOT/vllm_${PORT1}.log" 2>&1 &
 
 export HIP_VISIBLE_DEVICES=2
 srun -n 1 --exact \
-  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT2} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 --disable-v1" \
+  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT2} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 -O 0" \
   >> "$OUT_ROOT/vllm_${PORT2}.log" 2>&1 &
 
 # ----------------------------

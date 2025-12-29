@@ -1,0 +1,5 @@
+
+The following have been reloaded with a version change:
+  1) rocm/7.1.0 => rocm/6.4.1
+
+slurmstepd-k003-009: error: *** JOB 258345 ON k003-009 CANCELLED AT 2025-12-29T14:03:39 ***

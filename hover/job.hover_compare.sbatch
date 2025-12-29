@@ -29,10 +29,15 @@ RUN_ID="$(date +%Y%m%d_%H%M%S)"
 OUT_ROOT="$WORK/adBO/runs/hover_runs/$RUN_ID"
 mkdir -p "$OUT_ROOT"
 
+# Create/update "latest" symlink for resume scripts
+LATEST_LINK="$WORK/adBO/runs/hover_runs/latest"
+ln -sfn "$RUN_ID" "$LATEST_LINK"
+
 # Redirect SLURM stdout/stderr to OUT_ROOT
 exec > "$OUT_ROOT/slurm_${SLURM_JOB_ID}.out" 2> "$OUT_ROOT/slurm_${SLURM_JOB_ID}.err"
 
 echo "OUT_ROOT=$OUT_ROOT"
+echo "Symlinked to: $LATEST_LINK -> $RUN_ID"
 
 export VLLM_MODEL="Qwen/Qwen3-8B"
 export VLLM_API_KEY="EMPTY"
@@ -64,17 +69,17 @@ echo "$API0,$API1,$API2" > "$OUT_ROOT/api_bases.txt"
 # ----------------------------
 export HIP_VISIBLE_DEVICES=0
 srun -n 1 --exact \
-  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT0} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 --disable-v1" \
+  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT0} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 -O 0" \
   > "$OUT_ROOT/vllm_${PORT0}.log" 2>&1 &
 
 export HIP_VISIBLE_DEVICES=1
 srun -n 1 --exact \
-  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT1} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 --disable-v1" \
+  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT1} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 -O 0" \
   > "$OUT_ROOT/vllm_${PORT1}.log" 2>&1 &
 
 export HIP_VISIBLE_DEVICES=2
 srun -n 1 --exact \
-  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT2} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 --disable-v1" \
+  bash -lc "vllm serve \"$VLLM_MODEL\" --host 127.0.0.1 --port ${PORT2} --api-key \"$VLLM_API_KEY\" --max-model-len 16384 -O 0" \
   > "$OUT_ROOT/vllm_${PORT2}.log" 2>&1 &
 
 # ----------------------------

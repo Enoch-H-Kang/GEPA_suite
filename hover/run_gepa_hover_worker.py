@@ -70,9 +70,10 @@ def configure_dspy_lm_from_vllm():
         temperature=0.6,
         top_p=0.95,
         # top_k=20,  # enable only if your client supports it; otherwise set server-side in vLLM
-        max_tokens=8192,     # generous; still bounded by server max-model-len=16384
+        # No max_tokens limit - let vLLM dynamically allocate based on available context window
         cache=False,
-        num_retries=3,
+        num_retries=10,  # Increased retries for connection stability
+        timeout=300,  # 5 minute timeout for long generations
     )
     dspy.configure(lm=lm)
     return lm
