@@ -4,7 +4,7 @@ Codes for experimenting GEPA (https://arxiv.org/abs/2507.19457) and its variant 
 - For the ad optimization experiments in https://arxiv.org/abs/2511.12063, please refer to https://github.com/Enoch-H-Kang/TextBO .
 
 ## DSPy installation
-- Make sure you use the DSPy from this repo https://github.com/Enoch-H-Kang/dspy-TextBO for running TextBO-GEPA (It is nothing but GEPA with extra arguments bon and itr; vanilla GEPA is bon=1 and itr=1).
+- Make sure you use the DSPy from this repo https://github.com/Enoch-H-Kang/dspy-TextBO for running TextBO-GEPA (It is nothing but GEPA with extra arguments bon and itr; vanilla GEPA uses default parameters bon=1 and itr=1).
 
 ## Projects
 
