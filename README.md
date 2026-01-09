@@ -206,10 +206,5 @@ SLURM jobs start vLLM automatically.
    cat QUICKSTART.md
    ```
 
-## Status
-
-✅ **All dependencies installed**
-✅ **All projects tested and working**
-✅ **Ready to run experiments**
 
 Last updated: 2026-01-06
