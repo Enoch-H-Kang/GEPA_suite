@@ -1,6 +1,6 @@
 # GEPA Implementation Suite
 
-Codes for experimenting GEPA (https://arxiv.org/abs/2507.19457) and its variant TextBO-GEPA (https://arxiv.org/abs/2511.12063) for three benchmarks: HotpotQA, PUPA, and HoVER.
+Codes for experimenting GEPA (https://arxiv.org/abs/2507.19457) and its variant TextBO-GEPA (https://arxiv.org/abs/2511.12063) for three agentic AI benchmarks: HotpotQA, PUPA, and HoVER.
 - For the ad optimization experiments in https://arxiv.org/abs/2511.12063, please refer to https://github.com/Enoch-H-Kang/TextBO .
 
 ## DSPy installation
